@@ -1,0 +1,99 @@
+1. Introducción:
+Este documento detalla la implementación de operaciones polinómicas en Python utilizando la clase Polynomial. El objetivo fue cumplir con restricciones específicas: no utilizar librerías externas como Numpy y sobrecargar los operadores +, - y * para las operaciones. A continuación, se presenta una explicación detallada, dividida por partes del código.
+
+2. Clase Polynomial:
+
+La clase Polynomial se utiliza para representar y operar con polinomios. Se inicializa con una lista de coeficientes. Aquí está el código correspondiente:
+
+python
+Copy code
+class Polynomial:
+    def __init__(self, *coefficients):
+        self.coefficients = list(coefficients)
+    # Resto del código...
+En esta sección, los coeficientes del polinomio se almacenan en una lista interna para su posterior manipulación.
+
+3. Operación de Suma:
+
+El operador + se sobrecargó para permitir la suma de dos polinomios. El código es el siguiente:
+
+python
+Copy code
+def __add__(self, other):
+    max_len = max(len(self.coefficients), len(other.coefficients))
+    padded_self = self.coefficients + [0] * (max_len - len(self.coefficients))
+    padded_other = other.coefficients + [0] * (max_len - len(other.coefficients))
+    result_coeffs = [a + b for a, b in zip(padded_self, padded_other)]
+    return Polynomial(*result_coeffs)
+En esta sección, los polinomios se ajustan al mismo tamaño, se suman los coeficientes correspondientes y se crea un nuevo polinomio con los resultados.
+
+4. Operación de Resta:
+
+El operador - se sobrecargó para permitir la resta de dos polinomios. El código es el siguiente:
+
+python
+Copy code
+def __sub__(self, other):
+    max_len = max(len(self.coefficients), len(other.coefficients))
+    padded_self = self.coefficients + [0] * (max_len - len(self.coefficients))
+    padded_other = other.coefficients + [0] * (max_len - len(other.coefficients))
+    result_coeffs = [a - b for a, b in zip(padded_self, padded_other)]
+    return Polynomial(*result_coeffs)
+En esta sección, los polinomios se ajustan al mismo tamaño, se restan los coeficientes correspondientes y se crea un nuevo polinomio con los resultados.
+
+5. Operación de Multiplicación:
+
+El operador * se sobrecargó para permitir la multiplicación de dos polinomios. El código es el siguiente:
+
+python
+Copy code
+def __mul__(self, other):
+    result_coeffs = [0] * (len(self.coefficients) + len(other.coefficients) - 1)
+    for i, a in enumerate(self.coefficients):
+        for j, b in enumerate(other.coefficients):
+            result_coeffs[i + j] += a * b
+    return Polynomial(*result_coeffs)
+En esta sección, se multiplican los términos de los polinomios y se almacenan los resultados en un nuevo polinomio.
+
+6. Gráficas:
+
+Las gráficas se realizaron utilizando la biblioteca Matplotlib para visualizar los polinomios originales y sus operaciones. El código para graficar el producto de los polinomios en una gráfica diferente es el siguiente:
+
+python
+Copy code
+# Graficar el producto de los polinomios en una gráfica diferente
+y_mul = mul_result(x)
+
+plt.figure(figsize=(8, 6))
+plt.plot(x, y_mul, label='p1(x) * p2(x)', color='green', linewidth=2)
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Producto de p1(x) y p2(x)')
+plt.legend()
+plt.grid(True)
+plt.show()
+En esta sección, se crea una nueva gráfica para mostrar el producto del polinomio 
+�
+1
+(
+�
+)
+p 
+1
+​
+ (x) y 
+�
+2
+(
+�
+)
+p 
+2
+​
+ (x).
+
+7. Conclusiones:
+
+La implementación de estas operaciones polinómicas siguiendo las restricciones dadas demuestra un manejo efectivo de las estructuras de datos y la sobrecarga de operadores en Python. Las gráficas proporcionan una visualización clara de los resultados de las operaciones. El código desarrollado satisface los requisitos y proporciona una solución robusta para las operaciones con polinomios.
+
+Este informe proporciona una visión detallada de la implementación del código, mostrando las secciones relevantes del mismo y explicando cada parte del proceso.

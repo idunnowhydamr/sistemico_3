@@ -1,0 +1,63 @@
+Documentación del Código
+Clase Nota
+La clase Nota representa una nota en un cuaderno digital y tiene los siguientes atributos:
+
+memo: El contenido de la nota.
+etiqueta: Una etiqueta opcional para la nota.
+id: Un identificador único para la nota.
+timestamp: La fecha y hora en que se creó la nota.
+Métodos de la Clase Nota
+asignar_id(self, nota_id): Asigna un identificador único a la nota.
+
+casa(self, filtro): Verifica si la nota contiene el filtro (texto de búsqueda) en su memo o etiqueta, ignorando mayúsculas y minúsculas.
+
+Clase Cuaderno (anteriormente Notebook)
+La clase Cuaderno representa un cuaderno digital que contiene notas. Tiene los siguientes atributos:
+
+notas: Una lista que almacena todas las notas en el cuaderno.
+Métodos de la Clase Cuaderno
+agregarNota(self, nota): Agrega una nueva nota al cuaderno. Asigna un identificador único a la nota y la agrega a la lista de notas.
+
+modifiqueMemo(self, notaId, memo): Modifica el contenido de una nota existente en función de su identificador único.
+
+modifiqueEtiqueta(self, notaId, etiqueta): Modifica la etiqueta de una nota existente en función de su identificador único.
+
+encuentreNota(self, id): Encuentra y devuelve una nota en función de su identificador único.
+
+imprimaNotas(self): Imprime todas las notas en el cuaderno, incluyendo su ID, memo, etiqueta y fecha de creación.
+
+busque(self, filtro): Busca y devuelve una lista de notas que contienen el filtro en su memo o etiqueta, ignorando mayúsculas y minúsculas.
+
+Ejecución Principal
+La ejecución principal del programa ocurre dentro del bloque if __name__ == '__main__':. Aquí se crea una instancia de la clase Cuaderno, se agregan notas, se realizan diversas operaciones en las notas y se imprimen los resultados siguiendo el formato especificado.
+
+El código se organiza de manera que se realicen las siguientes acciones:
+
+Creación de una instancia de Cuaderno.
+
+Agregar notas al cuaderno.
+
+Imprimir las direcciones de memoria de todas las notas.
+
+Acceder a los atributos de las notas (ID y memo).
+
+Realizar una búsqueda en las notas y mostrar las coincidencias.
+
+Modificar el contenido de una nota.
+
+Agregar una nueva nota al cuaderno.
+
+Imprimir los atributos de una nota utilizando vars().
+
+Acceder a la etiqueta de una nota.
+
+Encontrar notas por su ID.
+
+Modificar la etiqueta de una nota.
+
+Imprimir nuevamente las direcciones de memoria de todas las notas.
+
+Imprimir todas las notas con sus atributos utilizando un bucle.
+
+Imprimir todas las notas utilizando el método imprimaNotas() de la clase Cuaderno.
+
