@@ -49,7 +49,7 @@ class Polynomial:
         return ' '.join(terms)
 
 # Definir los polinomios de entrada
-p1 = Polynomial(-3, 0, 2, 0, -7)
+p1 = Polynomial(-3, 0, 0,2, -7)
 p2 = Polynomial(5, -8, 0, 0, 10)
 
 # Realizar las operaciones
